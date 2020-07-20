@@ -1,0 +1,9 @@
+<div *ngFor="let article of articles">
+  {{article.title}}
+  {{article.content}}
+  {{article.img}}
+  {{article.publishAt}}
+
+</div>
+
+<button [routerLink]="['/create-article']">Créer un article</button>

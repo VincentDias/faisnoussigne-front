@@ -1,0 +1,14 @@
+<form (ngSubmit)="onSubmit()" #form="ngForm">
+
+  <input name="title" type="text" [(ngModel)]="article.title">
+
+  <input name="content" type="text" [(ngModel)]="article.content">
+
+  <input name="title" type="image" [(ngModel)]="article.img">
+
+
+  <button type="submit" [disabled]="!form.form.valid">
+    Enregistrer
+  </button>
+
+</form>

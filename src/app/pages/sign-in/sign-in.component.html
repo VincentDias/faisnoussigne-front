@@ -1,0 +1,31 @@
+<form (ngSubmit)="signin.valid && onSubmit()" #signin="ngForm">
+  <div>
+    <label for="username">Nom d'utilisateur :
+    </label>
+    <input name="username" type="text" [(ngModel)]="model.username" #username="ngModel" minlength="3" maxlength="15"
+      required>
+  </div>
+  <!-- Message d'erreurs -->
+  <div *ngIf="signin.submitted && username.errors">
+    <span *ngIf="username.errors?.required">Un nom d'utilisateur est requis</span>
+    <span *ngIf="username.errors?.minlength">La longueur minimale doit être supérieure à 3 caractères</span>
+    <span *ngIf="username.errors?.maxlength">La longueur maximale doit être inférieure à 15 caractères</span>
+  </div>
+
+
+  <div>
+    <label for="password">Mot de passe :
+    </label>
+    <input name="password" type="password" [(ngModel)]="model.password" #password="ngModel" required maxlength="30"
+      minlength="7">
+  </div>
+  <div *ngIf="signin.submitted && password.errors">
+    <span *ngIf="password.errors?.required">Le mot de passe est requis</span>
+    <span *ngIf="password.errors?.minlength">La longueur minimale doit être supérieure à 7 caractères</span>
+    <span *ngIf="password.errors?.maxlength">La longueur maximale doit être inférieure à 30 caractères</span>
+  </div>
+
+  <button type="submit">
+    Se connecter
+  </button>
+</form>
