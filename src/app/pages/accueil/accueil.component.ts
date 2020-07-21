@@ -9,6 +9,8 @@ export class AccueilComponent implements OnInit {
 
   constructor() { }
 
+  title = 'Fais nous signe';
+
   ngOnInit(): void {
   }
 

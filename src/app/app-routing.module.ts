@@ -15,15 +15,13 @@ import { BoardAdminComponent } from './jwt-auth/board-admin/board-admin.componen
 
 
 const routes: Routes = [
-  { path: 'accueil', component: AccueilComponent },
+  { path: '', component: AccueilComponent },
   { path: 'rencontre', component: RencontreComponent },
   { path: 'blog', component: BlogComponent },
   { path: 'create-article', component: CreateArticleComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'sign-in', component: SignInComponent },
-
-  { path: 'login', component: LoginComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'user', component: BoardUserComponent },
   { path: 'mod', component: BoardModeratorComponent },
