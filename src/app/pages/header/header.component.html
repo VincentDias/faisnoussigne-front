@@ -1,30 +1,4 @@
-<nav>
-  <a [routerLink]="['']">L'asso</a>
-  <a [routerLink]="['rencontre']">Rencontres à venir</a>
-  <a [routerLink]="['blog']">Blog</a>
-  <a [routerLink]="['contact']">Contactez-nous</a>
-  <a [routerLink]="['register']">S'enregistrer</a>
-  <a [routerLink]="['sign-in']">S'identifier</a>
-  <a *ngIf="isLoggedIn" (click)="logout()">Se déconnecter</a>
-
-
-</nav>
-
 <nav class="navbar navbar-expand navbar-dark bg-dark">
-  <a href="#" class="navbar-brand">bezKoder</a>
-  <ul class="navbar-nav mr-auto" routerLinkActive="active">
-
-    <li class="nav-item" *ngIf="showAdminBoard">
-      <a href="/admin" class="nav-link" routerLink="admin">Admin Board</a>
-    </li>
-    <li class="nav-item" *ngIf="showModeratorBoard">
-      <a href="/mod" class="nav-link" routerLink="mod">Moderator Board</a>
-    </li>
-    <li class="nav-item">
-      <a href="/user" class="nav-link" *ngIf="isLoggedIn" routerLink="user">User</a>
-    </li>
-  </ul>
-
   <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
     <li class="nav-item">
       <a href="/register" class="nav-link" routerLink="register">Sign Up</a>
@@ -43,3 +17,24 @@
     </li>
   </ul>
 </nav>
+
+<mat-toolbar>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>{{title}}</span>
+  <a [routerLink]="['']">L'asso</a>
+  <a [routerLink]="['rencontre']">Rencontres à venir</a>
+  <a [routerLink]="['blog']">Blog</a>
+  <a [routerLink]="['contact']">Contactez-nous</a>
+  <a *ngIf="!isLoggedIn" [routerLink]="['register']">S'enregistrer</a>
+  <a *ngIf="!isLoggedIn" [routerLink]="['login']">S'identifier</a>
+  <a *ngIf="isLoggedIn" (click)="logout()">Se déconnecter</a>
+  <span class="icon-menu"></span>
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <mat-icon>share</mat-icon>
+  </button>
+</mat-toolbar>
