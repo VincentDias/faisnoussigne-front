@@ -12,8 +12,17 @@ import { BlogComponent } from './pages/blog/blog.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { CreateArticleComponent } from './pages/blog/create-article/create-article.component';
 import { RegisterComponent } from './pages/register/register.component';
-import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BoardAdminComponent } from './jwt-auth/board-admin/board-admin.component';
+import { BoardModeratorComponent } from './jwt-auth/board-moderator/board-moderator.component';
+import { BoardUserComponent } from './jwt-auth/board-user/board-user.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { LoginComponent } from './pages/login/login.component';
+
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+
 
 @NgModule({
   declarations: [
@@ -25,14 +34,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ContactComponent,
     CreateArticleComponent,
     RegisterComponent,
-    SignInComponent
+    BoardAdminComponent,
+    BoardModeratorComponent,
+    BoardUserComponent,
+    ProfileComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

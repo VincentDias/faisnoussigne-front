@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/models/user';
+import { AuthService } from '../../jwt-auth/_services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -7,17 +7,27 @@ import { User } from 'src/app/models/user';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
+  form: any = {};
+  isSuccessful = false;
+  isSignUpFailed = false;
+  errorMessage = '';
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
-  model: User = new User();
-
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
   onSubmit() {
-    console.log(this.model);
-
+    this.authService.register(this.form).subscribe(
+      data => {
+        console.log(data);
+        this.isSuccessful = true;
+        this.isSignUpFailed = false;
+      },
+      err => {
+        this.errorMessage = err.error.message;
+        this.isSignUpFailed = true;
+      }
+    );
   }
-
 }

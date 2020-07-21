@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { TokenStorageService } from 'src/app/jwt-auth/_services/token-storage.service';
 import { AuthService } from 'src/app/jwt-auth/_services/auth.service';
+import { TokenStorageService } from 'src/app/jwt-auth/_services/token-storage.service';
 
 @Component({
-  selector: 'app-sign-in',
-  templateUrl: './sign-in.component.html',
-  styleUrls: ['./sign-in.component.scss']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']
 })
-export class SignInComponent implements OnInit {
+export class LoginComponent implements OnInit {
 
   form: any = {};
   isLoggedIn = false;
