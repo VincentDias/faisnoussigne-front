@@ -2,8 +2,10 @@
   {{article.title}}
   {{article.content}}
   {{article.img}}
-  {{article.publishAt}}
+
 
 </div>
 
-<button [routerLink]="['/create-article']">Créer un article</button>
+<div *ngIf="moderator">
+  <button [routerLink]="['/create-article']">Créer un article</button>
+</div>

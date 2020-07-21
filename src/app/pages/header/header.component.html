@@ -28,7 +28,7 @@
   <a [routerLink]="['contact']">Contactez-nous</a>
   <a *ngIf="!isLoggedIn" [routerLink]="['register']">S'enregistrer</a>
   <a *ngIf="!isLoggedIn" [routerLink]="['login']">S'identifier</a>
-  <a *ngIf="isLoggedIn" (click)="logout()">Se déconnecter</a>
+  <a *ngIf="isLoggedIn" (click)=" logout()">Se déconnecter</a>
   <span class="icon-menu"></span>
   <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
     <mat-icon>favorite</mat-icon>
