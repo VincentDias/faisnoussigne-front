@@ -7,6 +7,11 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { CreateArticleComponent } from './pages/blog/create-article/create-article.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
+import { LoginComponent } from './pages/login/login.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { BoardUserComponent } from './jwt-auth/board-user/board-user.component';
+import { BoardModeratorComponent } from './jwt-auth/board-moderator/board-moderator.component';
+import { BoardAdminComponent } from './jwt-auth/board-admin/board-admin.component';
 
 
 const routes: Routes = [
@@ -16,7 +21,15 @@ const routes: Routes = [
   { path: 'create-article', component: CreateArticleComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'sign-in', component: SignInComponent }
+  { path: 'sign-in', component: SignInComponent },
+
+  { path: 'login', component: LoginComponent },
+  { path: 'profile', component: ProfileComponent },
+  { path: 'user', component: BoardUserComponent },
+  { path: 'mod', component: BoardModeratorComponent },
+  { path: 'admin', component: BoardAdminComponent },
+
+  { path: '', redirectTo: 'accueil', pathMatch: 'full' }
 
 
 ];

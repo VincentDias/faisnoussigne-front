@@ -14,6 +14,12 @@ import { CreateArticleComponent } from './pages/blog/create-article/create-artic
 import { RegisterComponent } from './pages/register/register.component';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BoardAdminComponent } from './jwt-auth/board-admin/board-admin.component';
+import { BoardModeratorComponent } from './jwt-auth/board-moderator/board-moderator.component';
+import { BoardUserComponent } from './jwt-auth/board-user/board-user.component';
+import { LoginComponent } from './pages/login/login.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +31,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ContactComponent,
     CreateArticleComponent,
     RegisterComponent,
-    SignInComponent
+    SignInComponent,
+    BoardAdminComponent,
+    BoardModeratorComponent,
+    BoardUserComponent,
+    LoginComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
