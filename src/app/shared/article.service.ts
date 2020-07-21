@@ -15,12 +15,12 @@ export class ArticleService {
 
   constructor(private http: HttpClient) { }
 
-  getAllArticle(): Observable<Article> {
-    return this.http.get<Article>(this.URL);
+  getAllArticles(): Observable<Article[]> {
+    return this.http.get<Article[]>(this.URL);
   }
 
-  create(article: Article) {
-    return this.http.post(this.URL, article);
+  create(article: Article): Observable<Article> {
+    return this.http.post<Article>(this.URL, article);
   }
 
   deleteArticle(id: string) {

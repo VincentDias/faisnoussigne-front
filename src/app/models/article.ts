@@ -5,7 +5,6 @@ export class Article {
   id: number;
   title: string;
   content: string;
-  img: string;
-  publishAt: Date;
+  img?: string;
 
 }
