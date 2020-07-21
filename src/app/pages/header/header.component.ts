@@ -7,7 +7,6 @@ import { TokenStorageService } from 'src/app/jwt-auth/_services/token-storage.se
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  title = 'Fais nous signe';
   private roles: string[];
   isLoggedIn = false;
   showAdminBoard = false;
