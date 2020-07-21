@@ -2,7 +2,7 @@
   <div>
     <label for="username">Nom d'utilisateur :
     </label>
-    <input name="username" type="text" [(ngModel)]="model.username" #username="ngModel" minlength="3" maxlength="15"
+    <input name="username" type="text" [(ngModel)]="form.username" #username="ngModel" minlength="3" maxlength="15"
       required>
   </div>
   <!-- Message d'erreurs -->
@@ -16,7 +16,7 @@
   <div>
     <label for="password">Mot de passe :
     </label>
-    <input name="password" type="password" [(ngModel)]="model.password" #password="ngModel" required maxlength="30"
+    <input name="password" type="password" [(ngModel)]="form.password" #password="ngModel" required maxlength="30"
       minlength="7">
   </div>
   <div *ngIf="signin.submitted && password.errors">

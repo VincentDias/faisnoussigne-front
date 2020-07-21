@@ -17,7 +17,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BoardAdminComponent } from './jwt-auth/board-admin/board-admin.component';
 import { BoardModeratorComponent } from './jwt-auth/board-moderator/board-moderator.component';
 import { BoardUserComponent } from './jwt-auth/board-user/board-user.component';
-import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 
 
@@ -35,7 +34,6 @@ import { ProfileComponent } from './pages/profile/profile.component';
     BoardAdminComponent,
     BoardModeratorComponent,
     BoardUserComponent,
-    LoginComponent,
     ProfileComponent
   ],
   imports: [

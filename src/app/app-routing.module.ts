@@ -7,7 +7,6 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { CreateArticleComponent } from './pages/blog/create-article/create-article.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
-import { LoginComponent } from './pages/login/login.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { BoardUserComponent } from './jwt-auth/board-user/board-user.component';
 import { BoardModeratorComponent } from './jwt-auth/board-moderator/board-moderator.component';
@@ -22,6 +21,8 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'sign-in', component: SignInComponent },
+
+
   { path: 'profile', component: ProfileComponent },
   { path: 'user', component: BoardUserComponent },
   { path: 'mod', component: BoardModeratorComponent },

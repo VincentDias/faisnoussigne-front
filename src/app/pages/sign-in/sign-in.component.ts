@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/models/user';
+import { TokenStorageService } from 'src/app/jwt-auth/_services/token-storage.service';
+import { AuthService } from 'src/app/jwt-auth/_services/auth.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -8,16 +9,40 @@ import { User } from 'src/app/models/user';
 })
 export class SignInComponent implements OnInit {
 
-  constructor() { }
+  form: any = {};
+  isLoggedIn = false;
+  isLoginFailed = false;
+  errorMessage = '';
+  roles: string[] = [];
 
-  model: User = new User();
+  constructor(private authService: AuthService, private tokenStorage: TokenStorageService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    if (this.tokenStorage.getToken()) {
+      this.isLoggedIn = true;
+      this.roles = this.tokenStorage.getUser().roles;
+    }
   }
 
   onSubmit() {
-    console.log(this.model);
+    this.authService.login(this.form).subscribe(
+      data => {
+        this.tokenStorage.saveToken(data.accessToken);
+        this.tokenStorage.saveUser(data);
 
+        this.isLoginFailed = false;
+        this.isLoggedIn = true;
+        this.roles = this.tokenStorage.getUser().roles;
+        this.reloadPage();
+      },
+      err => {
+        this.errorMessage = err.error.message;
+        this.isLoginFailed = true;
+      }
+    );
   }
 
+  reloadPage() {
+    window.location.reload();
+  }
 }
