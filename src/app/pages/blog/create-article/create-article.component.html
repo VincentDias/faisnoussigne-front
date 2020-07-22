@@ -1,14 +1,14 @@
 <div *ngIf="currentUser; else loggedOut">
   <form (ngSubmit)="onSubmit()" #form="ngForm">
 
-    <input name="title" type="text" [(ngModel)]="article.title" #article.title="ngModel">
+    <input name="title" type="text" required [(ngModel)]="article.title" #title="ngModel">
 
-    <input name="content" type="text" [(ngModel)]="article.content" #article.content="ngModel">
+    <input name="content" type="text" required [(ngModel)]="article.content" #content="ngModel">
 
-    <input name="title" type="image" [(ngModel)]="article.file" #article.file="ngModel">
+    <input name="file" type="image" required [(ngModel)]="article.file" #file="ngModel">
 
 
-    <button type="submit" [disabled]="!form.form.valid">
+    <button type="submit">
       Enregistrer
     </button>
 

@@ -12,7 +12,7 @@ import { TokenStorageService } from 'src/app/jwt-auth/_services/token-storage.se
 export class CreateArticleComponent implements OnInit {
 
   currentUser: any;
-  article: Article;
+  article: any = {};
 
   constructor(private articleService: ArticleService, private token: TokenStorageService, private router: Router) { }
 
@@ -21,8 +21,8 @@ export class CreateArticleComponent implements OnInit {
   }
 
   onSubmit() {
-    this.articleService.create(this.article).subscribe((articleFromServeur: Article) => {
-      this.article = articleFromServeur;
+    this.articleService.create(this.article).subscribe((article: Article) => {
+      this.article = article;
       this.router.navigateByUrl('blog');
     });
   }
