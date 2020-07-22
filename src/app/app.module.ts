@@ -9,7 +9,6 @@ import { HeaderComponent } from './pages/header/header.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { CreateArticleComponent } from './pages/blog/create-article/create-article.component';
-import { RegisterComponent } from './pages/register/register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BoardAdminComponent } from './jwt-auth/board-admin/board-admin.component';
 import { BoardModeratorComponent } from './jwt-auth/board-moderator/board-moderator.component';
@@ -23,6 +22,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MeetComponent } from './pages/meet/meet.component';
 import { CreateMeetComponent } from './pages/meet/create-meet/create-meet.component';
 import { HomeComponent } from './pages/home/home.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 
 @NgModule({
@@ -40,7 +40,7 @@ import { HomeComponent } from './pages/home/home.component';
     LoginComponent,
     MeetComponent,
     CreateMeetComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

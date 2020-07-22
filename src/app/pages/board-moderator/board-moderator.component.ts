@@ -2,19 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/jwt-auth/_services/user.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-board-moderator',
+  templateUrl: './board-moderator.component.html',
+  styleUrls: ['./board-moderator.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class BoardModeratorComponent implements OnInit {
 
-  title = 'Fais nous signe';
-  content: string;
+  content: any;
 
   constructor(private userService: UserService) { }
 
   ngOnInit() {
-    this.userService.getPublicContent().subscribe(
+    this.userService.getModeratorBoard().subscribe(
       data => {
         this.content = data;
       },

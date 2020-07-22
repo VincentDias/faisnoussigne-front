@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { BlogComponent } from './pages/blog/blog.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { CreateArticleComponent } from './pages/blog/create-article/create-article.component';
-import { RegisterComponent } from './pages/register/register.component';
 import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { MeetComponent } from './pages/meet/meet.component';
@@ -11,6 +10,7 @@ import { CreateMeetComponent } from './pages/meet/create-meet/create-meet.compon
 import { BoardUserComponent } from './jwt-auth/board-user/board-user.component';
 import { BoardModeratorComponent } from './jwt-auth/board-moderator/board-moderator.component';
 import { BoardAdminComponent } from './jwt-auth/board-admin/board-admin.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 
 const routes: Routes = [
