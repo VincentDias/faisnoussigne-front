@@ -1,8 +1,14 @@
+import { GoogleMapGeocode } from './google-map-geocode';
+
 export class Meet {
 
   id: number;
   title: string;
-  date: Date;
   address: string;
+  date: Date;
+  lat: number;
+  lng: number;
+  googleMapGeocode: GoogleMapGeocode[];
+
 
 }

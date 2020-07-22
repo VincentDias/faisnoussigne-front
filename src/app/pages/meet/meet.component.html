@@ -1,1 +1,15 @@
-<p>meet works!</p>
+<div *ngFor="let meet of meets">
+
+  {{meet.title}}
+  {{meet.address}}
+  {{meet.date}}
+  {{meet.lat}}
+  {{meet.lng}}
+  {{meet.googleMapGeocode}}
+
+
+</div>
+
+<div *ngIf="moderator">
+  <button [routerLink]="['/create-meet']">Créer un événement</button>
+</div>

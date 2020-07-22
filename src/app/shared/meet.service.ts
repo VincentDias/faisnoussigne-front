@@ -19,13 +19,12 @@ export class MeetService {
     return this.http.get<Meet[]>(this.URL);
   }
 
-  createMeet(meet: Meet): Observable<Meet> {
+  postMeet(meet: Meet): Observable<Meet> {
     return this.http.post<Meet>(this.URL, meet);
   }
 
   deleteMeet(id: string) {
     return this.http.delete(this.URL, { params: { id } });
   }
-
 
 }
