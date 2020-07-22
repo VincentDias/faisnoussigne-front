@@ -6,7 +6,7 @@
     <div class="alert-danger" *ngIf="register.submitted && username.invalid">
       <div *ngIf="username.errors.required">Un nom d'utilisateur est requis</div>
       <div *ngIf="username.errors.minlength">
-        Le nom d'utilisateur doit avoir au moins 5 caractères.
+        Le nom d'utilisateur doit avoir au moins 3 caractères.
       </div>
       <div *ngIf="username.errors.maxlength">
         Le nom d'utilisateur ne peut pas avoir plus de 20 caractères.
