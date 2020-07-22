@@ -6,8 +6,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './pages/header/header.component';
-import { RencontreComponent } from './pages/rencontre/rencontre.component';
-import { AccueilComponent } from './pages/accueil/accueil.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { CreateArticleComponent } from './pages/blog/create-article/create-article.component';
@@ -22,14 +20,15 @@ import { LoginComponent } from './pages/login/login.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MeetComponent } from './pages/meet/meet.component';
+import { CreateMeetComponent } from './pages/meet/create-meet/create-meet.component';
+import { HomeComponent } from './pages/home/home.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    RencontreComponent,
-    AccueilComponent,
     BlogComponent,
     ContactComponent,
     CreateArticleComponent,
@@ -38,7 +37,10 @@ import { MatButtonModule } from '@angular/material/button';
     BoardModeratorComponent,
     BoardUserComponent,
     ProfileComponent,
-    LoginComponent
+    LoginComponent,
+    MeetComponent,
+    CreateMeetComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
