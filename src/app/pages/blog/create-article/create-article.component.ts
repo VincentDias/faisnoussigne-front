@@ -11,16 +11,18 @@ import { TokenStorageService } from 'src/app/jwt-auth/_services/token-storage.se
 })
 export class CreateArticleComponent implements OnInit {
 
-  article: Article;
+  currentUser: any;
+  article: any = {};
 
-  constructor(private articleService: ArticleService, private tokenStorageService: TokenStorageService, private router: Router) { }
+  constructor(private articleService: ArticleService, private token: TokenStorageService, private router: Router) { }
 
   ngOnInit(): void {
+    this.currentUser = this.token.getUser();
   }
 
   onSubmit() {
-    this.articleService.create(this.article).subscribe((articleFromServeur: Article) => {
-      this.article = articleFromServeur;
+    this.articleService.create(this.article).subscribe((article: Article) => {
+      this.article = article;
       this.router.navigateByUrl('blog');
     });
   }
