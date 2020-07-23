@@ -1,41 +1,41 @@
 <form (ngSubmit)="contact.valid && onSubmit()" #contact="ngForm">
 
   <div>
-    <label for="mail">Adresse email :
+    <label for="from">Adresse email :
     </label>
-    <input name="mail" type="email" [(ngModel)]="model.mail" #mail="ngModel" required email>
+    <input name="from" type="email" [(ngModel)]="mail.from" #from="ngModel" required email>
   </div>
-  <div *ngIf="contact.submitted && mail.errors">
-    <span *ngIf="mail.errors.required">Le champ email est requis</span>
+  <div *ngIf="contact.submitted && from.errors">
+    <span *ngIf="from.errors.required">Le champ email est requis</span>
   </div>
 
   <div>
-    <label for="firstname">Prénom :
+    <label for="name">Prénom :
     </label>
-    <input name="firstname" type="text" [(ngModel)]="model.firstname" #firstname="ngModel" minlength="3" maxlength="15"
+    <input name="name" type="text" [(ngModel)]="mail.name" #name="ngModel" minlength="3" maxlength="15" required>
+  </div>
+  <div *ngIf="contact.submitted && name.errors">
+    <span *ngIf="name.errors?.required">Le prénom est requis</span>
+    <span *ngIf="name.errors?.minlength">La longueur minimale doit être supérieure à 3 caractères</span>
+    <span *ngIf="name.errors?.maxlength">La longueur maximale doit être inférieure à 15 caractères</span>
+  </div>
+
+  <div>
+    <label for="subject">Objet :
+    </label>
+    <input name="subject" type="text" [(ngModel)]="mail.subject" #subject="ngModel" minlength="3" maxlength="15"
       required>
   </div>
-  <div *ngIf="contact.submitted && firstname.errors">
-    <span *ngIf="firstname.errors?.required">Le prénom est requis</span>
-    <span *ngIf="firstname.errors?.minlength">La longueur minimale doit être supérieure à 3 caractères</span>
-    <span *ngIf="firstname.errors?.maxlength">La longueur maximale doit être inférieure à 15 caractères</span>
-  </div>
-
-  <div>
-    <label for="object">Objet :
-    </label>
-    <input name="object" type="text" [(ngModel)]="model.object" #object="ngModel" minlength="3" maxlength="15" required>
-  </div>
-  <div *ngIf="contact.submitted && object.errors">
-    <span *ngIf="object.errors?.required">Un objet est requis</span>
-    <span *ngIf="object.errors?.minlength">La longueur minimale doit être supérieure à 3 caractères</span>
+  <div *ngIf="contact.submitted && subject.errors">
+    <span *ngIf="subject.errors?.required">Un objet est requis</span>
+    <span *ngIf="subject.errors?.minlength">La longueur minimale doit être supérieure à 3 caractères</span>
   </div>
 
   <div>
     <label for="message">Message :
     </label>
-    <textarea name="message" type="text" rows="5" cols="33" [(ngModel)]="model.message" #message="ngModel"
-      minlength="10" required>
+    <textarea name="message" type="text" rows="5" cols="33" [(ngModel)]="mail.message" #message="ngModel" minlength="10"
+      required>
     </textarea>
   </div>
   <div *ngIf="contact.submitted && message.errors">

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/models/user';
+import { MailService } from 'src/app/shared/mail.service';
+import { Mail } from 'src/app/models/mail';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
@@ -8,16 +10,20 @@ import { User } from 'src/app/models/user';
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+  mail = new Mail();
 
-  model: User = new User();
+
+  constructor(private mailService: MailService, private router: Router) { }
+
 
   ngOnInit(): void {
   }
 
   onSubmit() {
-    console.log(this.model);
-
+    this.mailService.sendEmail(this.mail).subscribe((mail: Mail) => {
+      this.mail = mail;
+      this.router.navigateByUrl('contact');
+    });
   }
 
 }
