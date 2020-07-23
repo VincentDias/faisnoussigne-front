@@ -11,10 +11,11 @@
 
   <input name="lng" type="text" [(ngModel)]="meet.lng" #lng="ngModel">
 
-  <input name="googleMapGeocode" type="text" [(ngModel)]="meet.googleMapGeocode" #googleMapGeocode="ngModel">
-
-
-
+  <div class="form-group">
+    <label>Enter address</label>
+    <input type="text" class="form-control" (keydown.enter)="$event.preventDefault()"
+      placeholder="Search Nearest Location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" #search>
+  </div>
 
   <button type="submit">
     Enregistrer l'événement

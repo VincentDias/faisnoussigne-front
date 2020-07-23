@@ -1,0 +1,15 @@
+<div *ngIf="currentUser; else loggedOut">
+
+  <form (ngSubmit)="onSubmit()" #form="ngForm">
+
+    <input name="title" type="file" required [(ngModel)]="file.title" #title="ngModel">
+
+    <button type="submit">
+      Enregistrer
+    </button>
+
+  </form>
+</div>
+<ng-template #loggedOut>
+  Veuillez vous connecter pour avoir accès à cette page
+</ng-template>

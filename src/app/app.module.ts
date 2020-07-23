@@ -25,6 +25,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { RegisterComponent } from './pages/register/register.component';
 
 import { AgmCoreModule } from '@agm/core';
+import { FileFormComponent } from './pages/blog/create-article/file-form/file-form.component';
 
 
 @NgModule({
@@ -43,6 +44,8 @@ import { AgmCoreModule } from '@agm/core';
     MeetComponent,
     CreateMeetComponent,
     HomeComponent,
+    FileFormComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -54,7 +57,8 @@ import { AgmCoreModule } from '@agm/core';
     MatIconModule,
     MatButtonModule,
     AgmCoreModule.forRoot({
-      apiKey: ''
+      apiKey: 'AIzaSyCadLBvMc3PqMiIXgBjXj3ROgzdSoapBiE',
+      libraries: ['places']
     })
   ],
   providers: [],
