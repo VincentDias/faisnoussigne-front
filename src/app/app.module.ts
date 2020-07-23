@@ -54,7 +54,7 @@ import { AgmCoreModule } from '@agm/core';
     MatIconModule,
     MatButtonModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyCadLBvMc3PqMiIXgBjXj3ROgzdSoapBiE'
+      apiKey: ''
     })
   ],
   providers: [],
