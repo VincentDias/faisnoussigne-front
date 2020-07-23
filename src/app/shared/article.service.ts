@@ -12,7 +12,7 @@ export class ArticleService {
   path = '/articles';
 
   URL = environment.URL + this.path;
-  URL_AUTH = environment.URL + '/api/auth' + this.path;
+  URL_AUTH = environment.URL_AUTH + this.path;
 
   constructor(private http: HttpClient) { }
 

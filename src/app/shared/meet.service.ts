@@ -12,6 +12,7 @@ export class MeetService {
   path = '/meets';
 
   URL = environment.URL + this.path;
+  URL_AUTH = environment.URL_AUTH + this.path;
 
   constructor(private http: HttpClient) { }
 
@@ -20,11 +21,11 @@ export class MeetService {
   }
 
   postMeet(meet: Meet): Observable<Meet> {
-    return this.http.post<Meet>(this.URL, meet);
+    return this.http.post<Meet>(this.URL_AUTH, meet);
   }
 
   deleteMeet(id: string) {
-    return this.http.delete(this.URL, { params: { id } });
+    return this.http.delete(this.URL_AUTH, { params: { id } });
   }
 
 }
