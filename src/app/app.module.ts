@@ -24,6 +24,8 @@ import { CreateMeetComponent } from './pages/meet/create-meet/create-meet.compon
 import { HomeComponent } from './pages/home/home.component';
 import { RegisterComponent } from './pages/register/register.component';
 
+import { AgmCoreModule } from '@agm/core';
+
 
 @NgModule({
   declarations: [
@@ -50,7 +52,10 @@ import { RegisterComponent } from './pages/register/register.component';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCadLBvMc3PqMiIXgBjXj3ROgzdSoapBiE'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

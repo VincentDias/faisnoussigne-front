@@ -13,8 +13,6 @@ export class ArticleService {
 
   URL = environment.URL + this.path;
 
-  URL_AUTH = environment.URL_AUTH + this.path;
-
   constructor(private http: HttpClient) { }
 
   getAllArticles(): Observable<Article[]> {
@@ -22,11 +20,11 @@ export class ArticleService {
   }
 
   create(article: Article): Observable<Article> {
-    return this.http.post<Article>(this.URL_AUTH, article);
+    return this.http.post<Article>(this.URL, article);
   }
 
   deleteArticle(id: string) {
-    return this.http.delete(this.URL_AUTH, { params: { id } });
+    return this.http.delete(this.URL, { params: { id } });
   }
 
 

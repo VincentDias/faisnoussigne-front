@@ -1,11 +1,14 @@
 <div *ngFor="let meet of meets">
+  <div>
+    {{meet.title}}
+    {{meet.address}}
+    {{meet.date}}
+  </div>
 
-  {{meet.title}}
-  {{meet.address}}
-  {{meet.date}}
-  {{meet.lat}}
-  {{meet.lng}}
-  {{meet.googleMapGeocode}}
+
+  <agm-map [latitude]="meet.lat" [longitude]="meet.lng">
+    <agm-marker [latitude]="meet.lat" [longitude]="meet.lng"></agm-marker>
+  </agm-map>
 
 
 </div>
