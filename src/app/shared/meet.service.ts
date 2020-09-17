@@ -20,12 +20,16 @@ export class MeetService {
     return this.http.get<Meet[]>(this.URL);
   }
 
+  getMeetById(id: number) {
+    return this.http.get<Meet>(this.URL + `/${id}`);
+  }
+
   postMeet(meet: Meet): Observable<Meet> {
     return this.http.post<Meet>(this.URL, meet);
   }
 
   updateMeet(meet: Meet): Observable<Meet> {
-    return this.http.post<Meet>(this.URL, meet);
+    return this.http.put<Meet>(this.URL + '/' + meet.id, meet);
   }
 
   deleteMeet(id: number) {

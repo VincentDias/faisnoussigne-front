@@ -86,7 +86,6 @@ export class CreateMeetComponent implements OnInit {
     });
   }
 
-
   onSubmit() {
     this.meetService.postMeet(this.meet).subscribe((meet: Meet) => {
       this.meet = meet;

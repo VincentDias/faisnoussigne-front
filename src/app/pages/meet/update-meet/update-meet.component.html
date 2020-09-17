@@ -1,1 +1,23 @@
-<p>update-meet works!</p>
+<div>
+  <input [value]="meet.title" (input)="meet.title = $event.target.value">
+
+  <div class="form-group">
+    <label>Entrer une adresse</label>
+    <input type="text" class="form-control" (keydown.enter)="$event.preventDefault()"
+      placeholder="Search Nearest Location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" #search
+      [value]="meet.address" (input)="meet.address = $event.target.value">
+  </div>
+
+  <input type="date" [value]="meet.date" (input)="meet.date = $event.target.value">
+</div>
+
+<div *ngIf="moderator">
+  <button (click)="updateMeet()">Modifier l'évênement</button>
+</div>
+<div *ngIf="admin">
+  <button (click)="deleteMeet(this.meet.id)">Supprimer l'évênement</button>
+</div>
+
+<div>
+  <button [routerLink]="['/meet']">Retour</button>
+</div>

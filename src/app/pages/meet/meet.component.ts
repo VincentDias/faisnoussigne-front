@@ -37,10 +37,6 @@ export class MeetComponent implements OnInit {
 
   }
 
-  deleteMeet(id: number) {
-    this.meetService.deleteMeet(id).subscribe();
-    location.reload();
-  }
 }
 
 

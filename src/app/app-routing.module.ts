@@ -23,7 +23,8 @@ const routes: Routes = [
 
   { path: 'meet', component: MeetComponent },
   { path: 'create-meet', component: CreateMeetComponent },
-  { path: 'update-meet', component: UpdateMeetComponent },
+  { path: 'meet/:id', component: UpdateMeetComponent },
+
 
   { path: 'blog', component: BlogComponent },
   { path: 'create-article', component: CreateArticleComponent },
