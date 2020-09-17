@@ -14,14 +14,3 @@ export class Result {
     public location: string,
     public viewport: string) { }
 }
-
-export class Adress {
-
-  id: number;
-  title: string;
-  address: string;
-  date: Date;
-  lat: number;
-  lng: number;
-
-}
