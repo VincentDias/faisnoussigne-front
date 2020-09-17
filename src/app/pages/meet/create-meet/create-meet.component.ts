@@ -71,8 +71,6 @@ export class CreateMeetComponent implements OnInit {
     }
   }
 
-
-
   getAddress(latitude, longitude) {
     this.geoCoder.geocode({ location: { lat: latitude, lng: longitude } }, (results, status) => {
       console.log(results);
@@ -90,10 +88,6 @@ export class CreateMeetComponent implements OnInit {
 
     });
   }
-
-
-
-
 
 
   onSubmit() {

@@ -17,7 +17,7 @@
     <label for="password">Mot de passe :
     </label>
     <input name="password" type="password" [(ngModel)]="form.password" #password="ngModel" required maxlength="30"
-      minlength="7">
+      minlength="6">
   </div>
   <div *ngIf="login.submitted && password.errors">
     <span *ngIf="password.errors?.required">Le mot de passe est requis</span>
