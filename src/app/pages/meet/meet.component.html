@@ -10,6 +10,13 @@
     <agm-marker [latitude]="meet.lat" [longitude]="meet.lng"></agm-marker>
   </agm-map>
 
+  <div *ngIf="moderator">
+    <button [routerLink]="['/update-meet']">Modifier l'évênement</button>
+  </div>
+  <div *ngIf="moderator">
+    <button (click)="deleteMeet(this.meet.id)">Supprimer l'évênement</button>
+  </div>
+
 
 </div>
 

@@ -14,8 +14,6 @@ export class CreateMeetComponent implements OnInit {
 
   currentUser: any;
   meet = new Meet();
-
-
   latitude: number;
   longitude: number;
   zoom: number;
@@ -73,8 +71,7 @@ export class CreateMeetComponent implements OnInit {
 
   getAddress(latitude, longitude) {
     this.geoCoder.geocode({ location: { lat: latitude, lng: longitude } }, (results, status) => {
-      console.log(results);
-      console.log(status);
+
       if (status === 'OK') {
         if (results[0]) {
           this.zoom = 12;
