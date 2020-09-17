@@ -26,6 +26,7 @@ import { RegisterComponent } from './pages/register/register.component';
 
 import { AgmCoreModule } from '@agm/core';
 import { FileFormComponent } from './pages/blog/create-article/file-form/file-form.component';
+import { UpdateMeetComponent } from './pages/meet/update-meet/update-meet.component';
 
 
 @NgModule({
@@ -45,6 +46,7 @@ import { FileFormComponent } from './pages/blog/create-article/file-form/file-fo
     CreateMeetComponent,
     HomeComponent,
     FileFormComponent,
+    UpdateMeetComponent,
 
   ],
   imports: [

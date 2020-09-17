@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Meet } from '../models/meet';
 import { Observable } from 'rxjs';
 
@@ -24,8 +24,12 @@ export class MeetService {
     return this.http.post<Meet>(this.URL, meet);
   }
 
-  deleteMeet(id: string) {
-    return this.http.delete(this.URL, { params: { id } });
+  updateMeet(meet: Meet): Observable<Meet> {
+    return this.http.post<Meet>(this.URL, meet);
+  }
+
+  deleteMeet(id: number) {
+    return this.http.delete(`${this.URL}/${id}`);
   }
 
 }

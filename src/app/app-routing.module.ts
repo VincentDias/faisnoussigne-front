@@ -11,6 +11,7 @@ import { BoardUserComponent } from './jwt-auth/board-user/board-user.component';
 import { BoardModeratorComponent } from './jwt-auth/board-moderator/board-moderator.component';
 import { BoardAdminComponent } from './jwt-auth/board-admin/board-admin.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { UpdateMeetComponent } from './pages/meet/update-meet/update-meet.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,7 @@ const routes: Routes = [
 
   { path: 'meet', component: MeetComponent },
   { path: 'create-meet', component: CreateMeetComponent },
+  { path: 'update-meet', component: UpdateMeetComponent },
 
   { path: 'blog', component: BlogComponent },
   { path: 'create-article', component: CreateArticleComponent },
