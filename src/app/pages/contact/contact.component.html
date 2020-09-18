@@ -23,7 +23,7 @@
   <div>
     <label for="subject">Objet :
     </label>
-    <input name="subject" type="text" [(ngModel)]="mail.subject" #subject="ngModel" minlength="3" maxlength="15"
+    <input name="subject" type="text" [(ngModel)]="mail.subject" #subject="ngModel" minlength="3" maxlength="25"
       required>
   </div>
   <div *ngIf="contact.submitted && subject.errors">
