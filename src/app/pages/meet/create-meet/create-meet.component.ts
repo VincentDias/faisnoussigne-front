@@ -35,6 +35,7 @@ export class CreateMeetComponent implements OnInit {
 
     this.mapsAPILoader.load().then(() => {
       this.setCurrentLocation();
+      // tslint:disable-next-line: new-parens
       this.geoCoder = new google.maps.Geocoder;
 
       const autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement);
