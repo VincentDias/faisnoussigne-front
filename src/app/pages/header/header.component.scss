@@ -1,0 +1,27 @@
+
+// Medium devices (tablets, 768px)
+@media (max-width: 768px) {
+
+  .mat-toolbar{
+    display: flex !important;
+    flex-flow: row wrap !important;
+    justify-content: center !important;
+  }
+
+  .mat-toolbar a{
+    display: none;
+  }
+
+ }
+
+
+
+  .mat-toolbar{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+  }
+
+  .mat-toolbar a{
+    text-decoration: none;
+  }

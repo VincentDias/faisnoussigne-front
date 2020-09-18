@@ -15,7 +15,7 @@ import { BoardModeratorComponent } from './jwt-auth/board-moderator/board-modera
 import { BoardUserComponent } from './jwt-auth/board-user/board-user.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { LoginComponent } from './pages/login/login.component';
-
+import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -58,6 +58,7 @@ import { UpdateMeetComponent } from './pages/meet/update-meet/update-meet.compon
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
+    MatCardModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCadLBvMc3PqMiIXgBjXj3ROgzdSoapBiE',
       libraries: ['places']
