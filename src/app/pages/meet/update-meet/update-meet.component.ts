@@ -31,7 +31,9 @@ export class UpdateMeetComponent implements OnInit {
   public searchElementRef: ElementRef;
 
   constructor(private meetService: MeetService, private tokenStorageService: TokenStorageService,
+    // tslint:disable-next-line: align
     private router: Router, private route: ActivatedRoute, private mapsAPILoader: MapsAPILoader,
+    // tslint:disable-next-line: align
     private ngZone: NgZone) { }
 
   ngOnInit(): void {
@@ -55,6 +57,7 @@ export class UpdateMeetComponent implements OnInit {
 
     this.mapsAPILoader.load().then(() => {
       this.setCurrentLocation();
+      // tslint:disable-next-line: new-parens
       this.geoCoder = new google.maps.Geocoder;
 
       const autocomplete = new google.maps.places.Autocomplete(this.searchElementRef.nativeElement);
@@ -106,21 +109,16 @@ export class UpdateMeetComponent implements OnInit {
     });
   }
 
-
-
-  updateMeet() {
-    this.meetService.updateMeet(this.meetToUpdate).subscribe((meet: Meet) => {
-      console.log('toto');
-      this.meet = { ...meet };
-      this.router.navigateByUrl('meet');
-    });
-  }
-
   deleteMeet(id: number) {
     this.meetService.deleteMeet(id).subscribe();
     this.router.navigateByUrl('meet');
   }
 
-  onSubmit() { }
+  onSubmit() {
+    this.meetService.updateMeet(this.meet).subscribe((meetToUpdate: Meet) => {
+      this.meet = { ...meetToUpdate };
+      this.router.navigateByUrl('meet');
+    });
+  }
 
 }
