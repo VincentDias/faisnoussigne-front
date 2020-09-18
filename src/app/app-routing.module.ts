@@ -35,8 +35,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
 
 
-
-  { path: '', redirectTo: 'accueil', pathMatch: 'full' }
+  { path: '**', component: HomeComponent }
 
 
 ];
