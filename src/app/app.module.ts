@@ -60,7 +60,7 @@ import { UpdateMeetComponent } from './pages/meet/update-meet/update-meet.compon
     MatButtonModule,
     MatCardModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyCadLBvMc3PqMiIXgBjXj3ROgzdSoapBiE',
+      apiKey: '',
       libraries: ['places']
     })
   ],
