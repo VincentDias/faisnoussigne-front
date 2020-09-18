@@ -106,21 +106,16 @@ export class UpdateMeetComponent implements OnInit {
     });
   }
 
-
-
-  updateMeet() {
-    this.meetService.updateMeet(this.meetToUpdate).subscribe((meet: Meet) => {
-      console.log('toto');
-      this.meet = { ...meet };
-      this.router.navigateByUrl('meet');
-    });
-  }
-
   deleteMeet(id: number) {
     this.meetService.deleteMeet(id).subscribe();
     this.router.navigateByUrl('meet');
   }
 
-  onSubmit() { }
+  onSubmit() {
+    this.meetService.updateMeet(this.meet).subscribe((meetToUpdate: Meet) => {
+      this.meet = { ...meetToUpdate };
+      this.router.navigateByUrl('meet');
+    });
+  }
 
 }
