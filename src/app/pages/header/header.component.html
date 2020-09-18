@@ -11,6 +11,6 @@
     <a *ngIf="!isLoggedIn" [routerLink]="['login']">S'identifier</a>
   </div>
   <div *ngIf="isLoggedIn">
-    <a *ngIf="isLoggedIn" [routerLink]="['']" (click)=" logout()">Se déconnecter</a>
+    <a *ngIf="isLoggedIn" [routerLink]="['']" (click)="logout()">Se déconnecter</a>
   </div>
 </mat-toolbar>

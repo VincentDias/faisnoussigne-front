@@ -1,4 +1,39 @@
+@media (max-width: 768px) {
+
+  .card {
+    max-width: 400px;
+  }
+
+  .container{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    margin: 25px;
+  }
+
+ }
+
+ h1{
+  text-align: center;
+  margin: 25px;
+}
+
 agm-map {
   height: 300px;
   width: 300px;
+}
+
+.card {
+  display: flex;
+  flex-flow: row wrap;
+  max-width: 400px;
+  margin: 25px;
+}
+
+.container{
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 25px;
 }
