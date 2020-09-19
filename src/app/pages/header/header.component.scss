@@ -2,24 +2,39 @@
 // Medium devices (tablets, 768px)
 @media (max-width: 768px) {
 
-  .mat-toolbar{
-    display: flex !important;
-    flex-flow: row wrap !important;
-    justify-content: center !important;
+  button{
+    display: inline !important;
   }
 
-  .mat-toolbar a{
+  #menu-bar a{
     display: none;
+  }
+
+  .mat-toolbar {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center ;
+    padding-right: 40px;
+    height: 100px;
   }
 
  }
 
+ button {
+   display: none;
+ }
 
-
-  .mat-toolbar{
+  mat-toolbar{
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
+  }
+
+  #menu-bar{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    width: 100%;
   }
 
   .mat-toolbar a{

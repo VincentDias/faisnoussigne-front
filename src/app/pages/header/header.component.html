@@ -1,16 +1,24 @@
 <mat-toolbar>
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+  <button mat-icon-button (click)="menutoggle()">
     <mat-icon>menu</mat-icon>
   </button>
-  <a [routerLink]="['']">L'asso</a>
-  <a [routerLink]="['meet']">Rencontres à venir</a>
-  <a [routerLink]="['blog']">Blog</a>
-  <a [routerLink]="['contact']">Contactez-nous</a>
-  <div *ngIf="!isLoggedIn">
-    <a *ngIf="!isLoggedIn" [routerLink]="['register']">S'enregistrer</a>
-    <a *ngIf="!isLoggedIn" [routerLink]="['login']">S'identifier</a>
+
+
+  <div id="menu-bar">
+
+    <a [routerLink]=" ['']">L'asso</a>
+    <a [routerLink]="['meet']">Rencontres à venir</a>
+    <a [routerLink]="['blog']">Blog</a>
+    <a [routerLink]="['contact']">Contactez-nous</a>
+    <div *ngIf="!isLoggedIn">
+      <a *ngIf="!isLoggedIn" [routerLink]="['register']">S'enregistrer</a>
+      <a *ngIf="!isLoggedIn" [routerLink]="['login']">S'identifier</a>
+    </div>
+    <div *ngIf="isLoggedIn">
+      <a *ngIf="isLoggedIn" [routerLink]="['']" (click)="logout()">Se déconnecter</a>
+    </div>
+
   </div>
-  <div *ngIf="isLoggedIn">
-    <a *ngIf="isLoggedIn" [routerLink]="['']" (click)="logout()">Se déconnecter</a>
-  </div>
+
+
 </mat-toolbar>
