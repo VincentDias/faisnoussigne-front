@@ -1,23 +1,68 @@
 @media (max-width: 768px) {
 
-  .card {
-    max-height: 400px;
-  }
-
-  .container{
+  .field{
     display: flex;
     flex-flow: column wrap;
-    align-items: center;
-    margin: 20px;
   }
 
- }
+  mat-label{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
 
- h1{
-  text-align: center;
-  margin: 25px;
+  primary-line-button{
+    display: flex;
+    flex-flow: column wrap;
+  }
+
+
 }
 
-mat-card{
-  margin: 15px;
+
+.container{
+display: flex;
+flex-flow: column wrap;
+margin: 20px;
+}
+
+h1{
+text-align: center;
+margin: 25px;
+}
+
+.card-fields{
+display: flex;
+flex-flow: column wrap;
+}
+
+.field{
+display: flex;
+justify-content: space-around;
+margin-top: 15px;
+margin-bottom: 15px;
+width: 100%;
+}
+
+mat-label{
+display: flex;
+flex-flow: column wrap;
+justify-content: center;
+}
+
+mat-card-actions{
+display: flex;
+flex-flow: column wrap;
+}
+
+.primary-line-button{
+display: flex;
+flex-flow: row wrap;
+justify-content: center;
+}
+
+.delete-button{
+display: flex;
+flex-flow: row wrap;
+justify-content: center;
 }
