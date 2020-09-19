@@ -1,30 +1,52 @@
-<form (ngSubmit)="onSubmit()" #form="ngForm">
-  <div>
-    <input [value]="meet.title" (input)="meet.title = $event.target.value">
+<div class="container">
+  <h1>Modifier un évênement</h1>
 
-    <div class="form-group">
-      <label>Entrer une adresse</label>
-      <input type="text" class="form-control" (keydown.enter)="$event.preventDefault()"
-        placeholder="Search Nearest Location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text"
-        #search [value]="meet.address" (input)="meet.address = $event.target.value">
-    </div>
+  <mat-card>
+    <form (ngSubmit)="onSubmit()" class="form">
 
-    <input type="date" [value]="meet.date" (input)="meet.date = $event.target.value">
-  </div>
+      <div class="card-fields">
+        <div class="field">
+          <mat-label>Titre</mat-label>
+          <input matInput [value]="meet.title" (input)="meet.title = $event.target.value">
+        </div>
 
-  <!-- <div >
-    <button (click)="updateMeet()">Modifier l'évênement</button>
-  </div> -->
-  <button type="submit" *ngIf="moderator">
-    Enregistrer l'événement
-  </button>
+        <div class="field">
+          <mat-label>Entrer une adresse</mat-label>
+          <input matInput type="text" class="form-control" (keydown.enter)="$event.preventDefault()"
+            placeholder="Search Nearest Location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text"
+            #search [value]="meet.address" (input)="meet.address = $event.target.value">
+        </div>
+
+        <div class="field">
+          <mat-label>Date</mat-label>
+          <input type="date" [value]="meet.date" (input)="meet.date = $event.target.value">
+        </div>
+
+        <div class="field">
+          <mat-label>Informations</mat-label>
+          <textarea matInput #message [value]="meet.content" (input)="meet.content = $event.target.value"></textarea>
+        </div>
+      </div>
 
 
-  <div *ngIf="admin">
-    <button (click)="deleteMeet(this.meet.id)">Supprimer l'évênement</button>
-  </div>
-</form>
+      <mat-card-actions>
+        <div class="primary-line-button">
+          <div *ngIf="moderator">
+            <button mat-button type="submit">Sauvegarder l'évênement</button>
+          </div>
 
-<div>
-  <button [routerLink]="['/meet']">Retour</button>
+          <div>
+            <button mat-button [routerLink]="['/meet']">Retour</button>
+          </div>
+        </div>
+
+        <div class="delete-button" *ngIf="admin">
+          <button mat-fab color="warn" (click)="deleteMeet(this.meet.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </mat-card-actions>
+
+    </form>
+  </mat-card>
 </div>

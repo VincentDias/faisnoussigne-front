@@ -9,6 +9,7 @@ export class Meet {
   lat: number;
   lng: number;
   googleMapGeocode: GoogleMapGeocode[];
+  content: string;
 
 
 }

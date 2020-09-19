@@ -1,0 +1,23 @@
+@media (max-width: 768px) {
+
+  .card {
+    max-height: 400px;
+  }
+
+  .container{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    margin: 20px;
+  }
+
+ }
+
+ h1{
+  text-align: center;
+  margin: 25px;
+}
+
+mat-card{
+  margin: 15px;
+}

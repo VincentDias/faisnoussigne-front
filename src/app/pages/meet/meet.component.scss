@@ -8,7 +8,7 @@
     display: flex;
     flex-flow: column wrap;
     align-items: center;
-    margin: 25px;
+    margin: 20px;
   }
 
  }
@@ -18,9 +18,13 @@
   margin: 25px;
 }
 
+mat-card{
+  margin: 15px;
+}
+
 agm-map {
-  height: 300px;
-  width: 300px;
+  height: 400px;
+  width: 400px;
 }
 
 .card {
@@ -33,7 +37,6 @@ agm-map {
 .container{
   display: flex;
   flex-flow: column wrap;
-  justify-content: center;
   align-items: center;
   margin: 25px;
 }
