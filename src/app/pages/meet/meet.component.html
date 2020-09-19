@@ -3,23 +3,28 @@
     <h1>Les prochains évênements</h1>
   </div>
 
-  <mat-card class="card" *ngFor="let meet of meets">
-    <mat-card-header>
-      <mat-card-title>{{meet.title}}</mat-card-title>
-      <mat-card-subtitle>{{meet.address}}</mat-card-subtitle>
-      {{meet.date}}
-    </mat-card-header>
-    <agm-map [latitude]="meet.lat" [longitude]="meet.lng" [zoom]="17">
-      <agm-marker [latitude]="meet.lat" [longitude]="meet.lng"></agm-marker>
-    </agm-map>
+  <div class="card">
+    <mat-card *ngFor="let meet of meets">
+      <mat-card-header>
+        <mat-card-title>{{meet.title}}</mat-card-title>
+        <mat-card-subtitle>
+          <p>{{meet.address}}</p>
+        </mat-card-subtitle>
+        {{meet.date}}
+      </mat-card-header>
+      <agm-map mat-card-image [latitude]="meet.lat" [longitude]="meet.lng" [zoom]="17">
+        <agm-marker [latitude]="meet.lat" [longitude]="meet.lng"></agm-marker>
+      </agm-map>
+      <mat-card-content>{{meet.content}}</mat-card-content>
 
-    <mat-card-actions>
-      <div *ngIf="moderator">
-        <button mat-button [routerLink]="['/meet', meet.id]">Modifier l'évênement</button>
-      </div>
-    </mat-card-actions>
+      <mat-card-actions>
+        <div *ngIf="moderator">
+          <button mat-button [routerLink]="['/meet', meet.id]">Modifier l'évênement</button>
+        </div>
+      </mat-card-actions>
 
-  </mat-card>
+    </mat-card>
+  </div>
 
   <div *ngIf="moderator">
     <button mat-button [routerLink]="['/create-meet']">Créer un événement</button>

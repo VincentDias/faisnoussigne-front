@@ -1,5 +1,5 @@
 <div *ngIf="currentUser; else loggedOut">
-  <form (ngSubmit)="onSubmit()" #form="ngForm">
+  <form (ngSubmit)="onSubmit()">
 
     <div class="form-group">
       <label>Entrer un titre</label>
@@ -16,6 +16,11 @@
       <input type="text" class="form-control" (keydown.enter)="$event.preventDefault()"
         placeholder="Search Nearest Location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text"
         #search name="address" [(ngModel)]="meet.address" #address="ngModel">
+    </div>
+
+    <div class="form-group">
+      <label>Informations sur l'évênement</label>
+      <input name="content" type="text" [(ngModel)]="meet.content" #content="ngModel">
     </div>
 
     <button type="submit">

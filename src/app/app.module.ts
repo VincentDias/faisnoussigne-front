@@ -19,6 +19,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatInputModule } from '@angular/material/input';
+
 import { MeetComponent } from './pages/meet/meet.component';
 import { CreateMeetComponent } from './pages/meet/create-meet/create-meet.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -59,8 +61,9 @@ import { UpdateMeetComponent } from './pages/meet/update-meet/update-meet.compon
     MatIconModule,
     MatButtonModule,
     MatCardModule,
+    MatInputModule,
     AgmCoreModule.forRoot({
-      apiKey: '',
+      apiKey: 'AIzaSyCadLBvMc3PqMiIXgBjXj3ROgzdSoapBiE',
       libraries: ['places']
     })
   ],
