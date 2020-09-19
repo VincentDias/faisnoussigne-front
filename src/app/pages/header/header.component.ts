@@ -29,6 +29,16 @@ export class HeaderComponent implements OnInit {
     }
   }
 
+  menutoggle() {
+    const y = document.getElementById('menu-bar');
+    if (y.style.display === '') {
+      y.style.display = 'block';
+
+    } else {
+      y.style.display = '';
+    }
+  }
+
   logout() {
     this.tokenStorageService.signOut();
     window.location.reload();
